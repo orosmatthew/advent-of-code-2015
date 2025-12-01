@@ -1,7 +1,7 @@
-#include "../utils.hpp"
+#include <utils.hpp>
 
-#include <array>
 #include <algorithm>
+#include <array>
 
 static std::array<int, 3> parse_dimensions(const std::string& data, size_t& pos)
 {

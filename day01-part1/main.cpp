@@ -1,4 +1,4 @@
-#include "../utils.hpp"
+#include <utils.hpp>
 
 int solve(const std::string& data)
 {

@@ -18,6 +18,8 @@ endif ()
 
 add_subdirectory(external/hash-library)
 
+include_directories(include)
+
 add_executable(day01-part1 day01-part1/main.cpp)
 add_executable(day01-part2 day01-part2/main.cpp)
 add_executable(day02-part1 day02-part1/main.cpp)

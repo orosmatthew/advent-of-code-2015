@@ -1,4 +1,4 @@
-#include "../utils.hpp"
+#include <utils.hpp>
 
 static bool is_nice(const std::string& string)
 {

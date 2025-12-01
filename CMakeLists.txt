@@ -16,9 +16,13 @@ if (WIN32)
     endif ()
 endif ()
 
+add_subdirectory(external/hash-library)
+
 add_executable(day01-part1 day01-part1/main.cpp)
 add_executable(day01-part2 day01-part2/main.cpp)
 add_executable(day02-part1 day02-part1/main.cpp)
 add_executable(day02-part2 day02-part2/main.cpp)
 add_executable(day03-part1 day03-part1/main.cpp)
 add_executable(day03-part2 day03-part2/main.cpp)
+add_executable(day04-part1 day04-part1/main.cpp)
+target_link_libraries(day04-part1 PRIVATE hash-library)

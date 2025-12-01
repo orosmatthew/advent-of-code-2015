@@ -3,14 +3,14 @@
 #include <algorithm>
 #include <array>
 
-static std::array<int, 3> parse_dimensions(const std::string& data, size_t& pos)
+static std::array<int, 3> parse_dimensions(const std::string& data, int& pos)
 {
     const int length = parse_int(data, pos);
     ++pos; // "x"
     const int width = parse_int(data, pos);
     ++pos; // "x"
     const int height = parse_int(data, pos);
-    return std::array<int, 3> { length, width, height };
+    return std::array { length, width, height };
 }
 
 static int calc_surface_area(const std::array<int, 3>& dimensions)
@@ -28,7 +28,7 @@ static int min_side_area(std::array<int, 3>& dimensions)
 static int solve(const std::string& data)
 {
     int total = 0;
-    for (size_t pos = 0; pos < data.length(); ++pos) {
+    for (int pos = 0; pos < data.length(); ++pos) {
         std::array<int, 3> dimensions = parse_dimensions(data, pos);
         const int surface_area = calc_surface_area(dimensions);
         const int extra = min_side_area(dimensions);

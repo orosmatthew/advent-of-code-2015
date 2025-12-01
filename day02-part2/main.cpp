@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <array>
 
-static std::array<int, 3> parse_dimensions(const std::string& data, size_t& pos)
+static std::array<int, 3> parse_dimensions(const std::string& data, int& pos)
 {
     const int length = parse_int(data, pos);
     ++pos; // "x"
@@ -16,7 +16,7 @@ static std::array<int, 3> parse_dimensions(const std::string& data, size_t& pos)
 static int solve(const std::string& data)
 {
     int total = 0;
-    for (size_t pos = 0; pos < data.length(); ++pos) {
+    for (int pos = 0; pos < data.length(); ++pos) {
         std::array<int, 3> dimensions = parse_dimensions(data, pos);
         std::ranges::sort(dimensions);
         const int ribbon_wrap = dimensions[0] * 2 + dimensions[1] * 2;

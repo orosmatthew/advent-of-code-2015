@@ -37,7 +37,7 @@ inline bool is_digit(const char c)
     return c >= '0' && c <= '9';
 }
 
-inline int parse_int(const std::string& data, size_t& pos)
+inline int parse_int(const std::string& data, int& pos)
 {
     int result = 0;
     while (is_digit(data[pos])) {

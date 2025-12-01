@@ -1,12 +1,14 @@
 #pragma once
 
+#include <algorithm>
 #include <chrono>
+#include <cmath>
 #include <filesystem>
 #include <fstream>
+#include <functional>
 #include <print>
 #include <string>
-#include <functional>
-#include <cmath>
+#include <vector>
 
 inline std::string read_file(const std::filesystem::path& path)
 {
@@ -53,4 +55,17 @@ constexpr Int math_mod(const Int dividend, const Int divisor)
         return remainder + std::abs(divisor);
     }
     return remainder;
+}
+
+template <typename T>
+std::vector<T>::iterator insert_sorted(std::vector<T>& vector, T item)
+{
+    return vector.insert(std::ranges::upper_bound(vector, item, std::less {}), item);
+}
+
+template <typename T>
+bool contains_sorted(const std::vector<T>& vector, const T& item)
+{
+    auto it = std::ranges::lower_bound(vector, item, std::less {});
+    return it != vector.end() && *it == item;
 }

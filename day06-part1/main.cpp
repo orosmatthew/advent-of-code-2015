@@ -33,14 +33,14 @@ static Instruction parse_instruction(const std::string& data, int& pos)
         assert(false);
     }
     Vector2 start {};
-    start.x = parse_int(data, pos);
+    start.x = parse_uint<int>(data, pos);
     ++pos; // ","
-    start.y = parse_int(data, pos);
+    start.y = parse_uint<int>(data, pos);
     pos += 9; // " through "
     Vector2 end {};
-    end.x = parse_int(data, pos);
+    end.x = parse_uint<int>(data, pos);
     ++pos; // ","
-    end.y = parse_int(data, pos);
+    end.y = parse_uint<int>(data, pos);
     assert(start.x <= end.x);
     assert(start.y <= end.y);
     return { .type = type, .start = start, .end = end };

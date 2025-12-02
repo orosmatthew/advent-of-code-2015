@@ -5,11 +5,11 @@
 
 static std::array<int, 3> parse_dimensions(const std::string& data, int& pos)
 {
-    const int length = parse_int(data, pos);
+    const int length = parse_uint<int>(data, pos);
     ++pos; // "x"
-    const int width = parse_int(data, pos);
+    const int width = parse_uint<int>(data, pos);
     ++pos; // "x"
-    const int height = parse_int(data, pos);
+    const int height = parse_uint<int>(data, pos);
     return std::array { length, width, height };
 }
 

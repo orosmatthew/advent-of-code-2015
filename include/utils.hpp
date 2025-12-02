@@ -37,9 +37,10 @@ inline bool is_digit(const char c)
     return c >= '0' && c <= '9';
 }
 
-inline int parse_int(const std::string& data, int& pos)
+template<typename UInt>
+UInt parse_uint(const std::string& data, int& pos)
 {
-    int result = 0;
+    UInt result = 0;
     while (is_digit(data[pos])) {
         result = result * 10 + (data[pos] - '0');
         ++pos;
